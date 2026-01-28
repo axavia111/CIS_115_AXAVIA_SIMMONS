@@ -1,9 +1,9 @@
 #This is a program calculates Force
 
-mass = 20 #mass is measured in kg
-acceleration = 6.93 #acceleration is measured in meters per second
+mass = input("Enter first number: ") #mass is measured in kg
+acceleration = input("Enter second number: ") #acceleration is measured in meters per second
 
-force = mass * acceleration
+force = float(mass) * float(acceleration)
 
 result = force
 
