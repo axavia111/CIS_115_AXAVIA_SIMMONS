@@ -1,9 +1,9 @@
 # This is my program that calculates the velocity
 
-time = 4 #Time is in hours
-distance = 400 #Distance is in miles
+time = input("Enter first number: ") #Time is measured in hours
+distance = input("Enter second number: ") #Distance is measured in miles
 
-velocity = distance / time
+velocity = float(distance) / float(time)
 
 result = velocity
 

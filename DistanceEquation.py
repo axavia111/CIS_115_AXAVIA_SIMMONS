@@ -1,10 +1,10 @@
 #This is my program that calculates the distance travelled
 
-velocity = 80 #speed is in mph
-time = 2 #time is hours
+velocity = input("Enter first number: ") #speed is measured in mph
+time = input("Enter second number: ") #time is measured in hours
 
 
-distance = velocity * time
+distance = float(velocity) * float(time)
 
 
 result = distance

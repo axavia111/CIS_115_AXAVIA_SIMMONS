@@ -1,9 +1,9 @@
 #This is my program on calculating voltage
 
-current =  10 #current is measured in amps
-resistance = 2 #resistance is measured in ohms
+current =  input("Enter first number: ") #current is measured in amps
+resistance = input("Enter second number: ") #resistance is measured in ohms
 
-voltage = current * resistance
+voltage = float(current) * float(resistance)
 result = voltage
 
 print(f'The voltage is: {result} volts')

@@ -1,4 +1,4 @@
-#This is a program calculates Force
+#This is a program that calculates Force
 
 mass = input("Enter first number: ") #mass is measured in kg
 acceleration = input("Enter second number: ") #acceleration is measured in meters per second
