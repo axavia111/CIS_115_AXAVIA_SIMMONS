@@ -1,11 +1,12 @@
 #This program calucaltes energy
 
-mass = int(input("Enter a integer value for Mass: "))
-c = (int(input("Enter a interger value for C: "))) * 1000000000
+mass = float(input("Enter a integer value for Mass: "))
+c = 2.99 * 10**8
+
 
 def calculate_energy(mass):
     e = mass * (c * c)
 
-    print(f'The energy produced is: {e:,.4f} Joules')
+    print(f'The energy produced is: {e:,.6f} Joules')
 
-calculate_energy()
+calculate_energy(mass)
