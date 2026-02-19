@@ -1,4 +1,4 @@
-#This program implements a usre-defined function named print_iterations()
+#This program implements a user-defined function named print_iterations()
 Val = int(input("Enter a value: "))
 loopCounter = 0
 
