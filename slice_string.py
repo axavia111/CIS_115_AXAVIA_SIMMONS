@@ -1,8 +1,10 @@
+#This program shows how to slice a string value
+
+stringValue = input("Enter a String Value: ") #allows user to input a string value
+
+def slice_my_string(stringValue): #passes whatever the user input assigned to the variable stringValue
+    return stringValue[0:3] #returns the position 0 to 3 in value inputed
 
 
-stringValue = int(input("Enter a number between 0-5: "))
 
-def slice_my_string(stringValue):
-    numbers = [1,2,3,4,5,6]
-    stringValue = []
-    
+print (slice_my_string(stringValue)) #calls the function
