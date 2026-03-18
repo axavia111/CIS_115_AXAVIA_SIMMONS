@@ -7,7 +7,7 @@ def search(month): #define the function and pass the variable month through
     
     if month in months: #if the value entered for the variable month is in the list months than it will print to console
         print(f'The month {month} was found in the list.')
-    else:
+    else: #If value entered is not in list it will print this statement
         print(f'The month {month} was NOT found in the list.')
 
 search(month)

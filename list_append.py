@@ -8,7 +8,7 @@ def append_to_list(value,list): #This function passes the list and the value ent
     return list
 
 value = input("Enter a value: ") #Prompt user to enter any value
-append_to_list(value,list)
+append_to_list(value,list) #calls the function and adds value to the list
 
 
 x = input("Would you like to enter another value to append to the list?:  ") #Prompts user again to enter a value
@@ -18,5 +18,5 @@ while x  == 'yes': #Uses a while-loop and keeps prompting user to enter a value 
     append_to_list(value,list)
     x = input("Would you like to enter another value to append to the list?:  ") #Once x == no, then the loop stops.
 
-print(list) #Prints out the list with the values user inputted
+print(list) #Prints out the list with the values user entered
 
