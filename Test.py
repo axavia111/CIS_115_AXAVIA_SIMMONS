@@ -7,3 +7,7 @@ for word in sentence:
     myDict[word] = word
 
 print(myDict)
+
+
+
+   
