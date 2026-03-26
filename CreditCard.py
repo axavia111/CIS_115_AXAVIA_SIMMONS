@@ -26,11 +26,13 @@ while  validCard == False: #While validCard is false than it prompts user for in
     ccNum = ccNum[::-1]    
         
         
-    if validateCreditCard(ccNum): #Calls on function to check ccNUm
+    if validateCreditCard(ccNum): #Calls on function to check ccNum
+                ccNum = ccNum[::-1]
                 print(f'The credit card {ccNum} is valid!!!') #The credit card number is valid and validCard is true, so it stops the loop
                 validCard = True
 
     else:
+             ccNum = ccNum[::-1]
              print(f'The credit card {ccNum} is invalid. Please try again.') #The credit card number entered is invaild and prompts user to enter another number.
              
 
