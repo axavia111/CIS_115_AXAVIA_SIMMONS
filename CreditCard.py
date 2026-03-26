@@ -1,8 +1,5 @@
 #This program checks whether a credit card number is valid or invalid
 
-ccNum = input("Enter credit card number: ") #Prompts user to enter credit card number, needs to be string value in order to loop over each character
-x = "Yes"
-ccNum = ccNum[::-1] #reverses credit card number
 
 def validateCreditCard(ccNum): #passes the reversed number through
     total = 0 #Keeps track of the sum of numbers passed through loop
@@ -20,23 +17,28 @@ def validateCreditCard(ccNum): #passes the reversed number through
         total = total + num #Adds the product of the number passed through the loop to the total
         count = count + 1 #Adds the each time it loops over
 
-    return total % 10 == 0 #returns the mod 10 check if the sum of all numbers is equal 0
+    return total % 10 == 0 #returns the mod 10 check if the product is equal 0
 
-if validateCreditCard(ccNum): #The credit card number is valid and stops the loop.
-    print(f'The credit card {ccNum} is valid!!!')
-
-else:
-    print(f'The credit card {ccNum} is invalid. Please try again.') #The credit card number entered is invaild and prompts user to enter another number.
+validCard = False #Set variable to equal false 
+        
+while  validCard == False: #While validCard is false than it prompts user for input and reverses the string, and passes it through the function
+    ccNum = input("Enter a credit card number: ")   
+    ccNum = ccNum[::-1]    
         
         
-while x == "Yes":
-            x = input("Would you like to enter credit card number?: ") 
+    if validateCreditCard(ccNum): #Calls on function to check ccNUm
+                print(f'The credit card {ccNum} is valid!!!') #The credit card number is valid and validCard is true, so it stops the loop
+                validCard = True
 
-            ccNum = input("Enter a credit card number: ") #Keeping the loop going until a valid credit card number is entered
-            ccNum = ccNum[::-1]
+    else:
+             print(f'The credit card {ccNum} is invalid. Please try again.') #The credit card number entered is invaild and prompts user to enter another number.
+             
 
-            validateCreditCard(ccNum) #calls on function to check the next number
+
+
+
     
+        
 
 
 
