@@ -1,0 +1,11 @@
+
+
+Create a table and display list of products:
+    1.USB Drive (128 GB): $12.00
+    2. Mac Book Pro(15 in.): $2,900.00
+    3.Arduino 1010(w/bluetooth): $48.00
+    4. Ring Camera(Wireless): $156.00
+    5. Smart TV(TCL 70 in.): $359.00
+
+Use a dictionary to store product attributes 
+Prompt user to enter product ID
