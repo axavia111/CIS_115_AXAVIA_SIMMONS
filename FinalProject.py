@@ -8,7 +8,6 @@ print('3  | Arduino 1010 (w/Bluetooth)   |  $48.00')
 print('4  | Ring Camera (wireless)       |  $156.00')
 print('5  | Smart TV (TCL 70 in.)        |  $359.00')
 
-
 ListofProducts = [{
     'Product ID': '1',
     'SKU': 'usb_k981',
@@ -46,6 +45,25 @@ ListofProducts = [{
     'Qty on Hand': '225'
     }]
 
+
+
+
+def user_order(UserOrder):
+    Cart = {}
+
+UserOrder = input("Choose a product ID from the product catalog to continue:  ")
+
+UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
+
+user_order(UserOrder,UserQuantity)
+
+x = input("Would you like to add another product (yes or no)?: ")
+
+while x == "yes":
+    UserOrder = input("Choose a product ID from the product catalog to continue:  ")
+    UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
+    user_order(UserOrder,UserQuantity)
+    x = input("Would you like to add another product (yes or no)?: ")
 
 
 
