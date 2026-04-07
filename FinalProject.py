@@ -47,9 +47,9 @@ ListofProducts = [{
 
 
 
-
-def user_order(UserOrder):
+def user_order(UserOrder,UserQuantity):
     Cart = {}
+
 
 UserOrder = input("Choose a product ID from the product catalog to continue:  ")
 
@@ -57,13 +57,21 @@ UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
 
 user_order(UserOrder,UserQuantity)
 
+
+
 x = input("Would you like to add another product (yes or no)?: ")
+
+
 
 while x == "yes":
     UserOrder = input("Choose a product ID from the product catalog to continue:  ")
     UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
     user_order(UserOrder,UserQuantity)
     x = input("Would you like to add another product (yes or no)?: ")
+
+
+
+print(user_order(UserOrder,UserQuantity))
 
 
 
