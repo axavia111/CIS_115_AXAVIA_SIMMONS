@@ -45,17 +45,30 @@ ListofProducts = [{
     'Qty on Hand': '225'
     }]
 
+Cart = {}
+
+def add_to_cart(UserOrder,UserQuantity):
+    product = None
+    for p in ListofProducts:
+        if p['Product ID'] == UserOrder:
+            product = p
+    if product == None:
+        print('Invalid Product ID. Please try again.')
+        return
+    Quantity = int(UserQuantity)
+
+    if UserOrder in Cart:
+        Cart[UserOrder]['Qty'] += Quantity
+        
 
 
-def user_order(UserOrder,UserQuantity):
-    Cart = {}
 
 
 UserOrder = input("Choose a product ID from the product catalog to continue:  ")
 
 UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
 
-user_order(UserOrder,UserQuantity)
+add_to_cart(UserOrder,UserQuantity)
 
 
 
@@ -66,12 +79,12 @@ x = input("Would you like to add another product (yes or no)?: ")
 while x == "yes":
     UserOrder = input("Choose a product ID from the product catalog to continue:  ")
     UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
-    user_order(UserOrder,UserQuantity)
+    add_to_cart(UserOrder,UserQuantity)
     x = input("Would you like to add another product (yes or no)?: ")
 
 
 
-print(user_order(UserOrder,UserQuantity))
+
 
 
 
