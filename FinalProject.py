@@ -97,8 +97,10 @@ def display_cart():
             #Multiplies price of an item by the quatity then adds to the total amount
             total = total + (price * item['Qty'])
         print("----------------------------------------------")
+        #Converts total to a string
         print("Total: $" + str(total))
-        
+
+     
 
 def validateCreditCard(ccNum): #passes the reversed number through
     total = 0 #Keeps track of the sum of numbers passed through loop
