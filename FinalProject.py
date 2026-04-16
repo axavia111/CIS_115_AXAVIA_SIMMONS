@@ -7,6 +7,7 @@ print('2  | Mac Book Pro (15 in.)        |  $2900.00')
 print('3  | Arduino 1010 (w/Bluetooth)   |  $48.00')
 print('4  | Ring Camera (wireless)       |  $156.00')
 print('5  | Smart TV (TCL 70 in.)        |  $359.00')
+
 #List of dictionaries. Each dictionary containing the info for each product
 ListofProducts = [{
     'Product ID': '1',
@@ -44,8 +45,14 @@ ListofProducts = [{
     'Description': 'TCL Smart TV.',
     'Qty on Hand': '225'
     }]
+
+
 #An empty dictionary for the customer items 
 Cart = {}
+#Set variable to equal false
+validCard = False
+
+
 
 def add_to_cart(UserOrder,UserQuantity):
     #sets product to none, to check if the product inputted is found
@@ -72,6 +79,7 @@ def add_to_cart(UserOrder,UserQuantity):
             'Qty' : Quantity
         }
     
+
 def display_cart():
         #set toal to 0
         total = 0
@@ -91,6 +99,7 @@ def display_cart():
         print("----------------------------------------------")
         print("Total: $" + str(total))
         
+
 def validateCreditCard(ccNum): #passes the reversed number through
     total = 0 #Keeps track of the sum of numbers passed through loop
     count = 0 #Keeps track of how many times it has been looped over
@@ -109,7 +118,7 @@ def validateCreditCard(ccNum): #passes the reversed number through
 
     return total % 10 == 0 #returns the mod 10 check if the product is equal 0
 
-validCard = False #Set variable to equal false 
+ 
         
 
 #Prompts user to choose a product from catalog
@@ -153,36 +162,37 @@ if checkout == "yes":
     phone = input("Enter Your Phone Number: ")
     
     #Prompt for credit card information
-    while  validCard == False: #While validCard is false than it prompts user for input and reverses the string, and passes it through the function
+while  validCard == False: #While validCard is false than it prompts user for input and reverses the string, and passes it through the function
         ccNum = input("Enter a credit card number: ")   
         ccNum = ccNum[::-1]    
         
         
-    if validateCreditCard(ccNum): #Calls on function to check ccNum
+        if validateCreditCard(ccNum): #Calls on function to check ccNum
                 ccNum = ccNum[::-1]
                 print(f'The credit card {ccNum} is valid!!!') #The credit card number is valid and validCard is true, so it stops the loop
                 validCard = True
+                expDate = input("Enter The Expiration Date: ")
+                CVV = input("Enter The CVV: ")
 
-    else:
+        else:
              ccNum = ccNum[::-1]
              print(f'The credit card {ccNum} is invalid. Please try again.') #The credit card number entered is invaild and prompts user to enter another number.
              
 
 
     #Displapy billing/shipping information and cart
-    print("--------------------------------------")
-    print("---- Billing/Shipping Information ----")
-    print("---------------------------------------")
-    print("Name:" + first_name + " " + last_name)
-    print("Address:" + address)
-    print("City:" + city)
-    print("State:" + state)
-    print("Zip Code:" + zip_code)
-    print("Email:" + email)
-    print("Phone:" + phone)
-    print("----------------------------------------")
-    print("")
-    display_cart
+print("--------------------------------------")
+print("---- Billing/Shipping Information ----")
+print("---------------------------------------")
+print("Name:" + first_name + " " + last_name)
+print("Address:" + address)
+print("City:" + city)
+print("State:" + state)
+print("Zip Code:" + zip_code)
+print("Email:" + email)
+print("Phone:" + phone)
+
+display_cart()
 
 
 
