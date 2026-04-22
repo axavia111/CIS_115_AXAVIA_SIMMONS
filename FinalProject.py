@@ -101,7 +101,6 @@ def display_cart():
         print("Total: $" + str(total))
 
      
-
 def validateCreditCard(ccNum): #passes the reversed number through
     total = 0 #Keeps track of the sum of numbers passed through loop
     count = 0 #Keeps track of how many times it has been looped over
