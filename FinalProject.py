@@ -149,6 +149,9 @@ while x == "yes":
 #prompt user to see if ready for checkout
 checkout = input("Are you ready to checkout (yes or no): ")
 
+while checkout == "no":
+     checkout = input("Are you ready to checkout (yes or no): ")
+
 #if checkout equals yes then prompt for billing/shipping information
 if checkout == "yes":
     print("Please enter billing/shipping information")
@@ -161,6 +164,7 @@ if checkout == "yes":
     zip_code = input("Enter zipcode/postal code: ")
     email = input("Enter Your Email Address: ")
     phone = input("Enter Your Phone Number: ")
+
     
     #Prompt for credit card information
 while  validCard == False: #While validCard is false than it prompts user for input and reverses the string, and passes it through the function
