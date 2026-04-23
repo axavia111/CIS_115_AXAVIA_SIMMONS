@@ -67,17 +67,34 @@ def add_to_cart(UserOrder,UserQuantity):
         return
     #Converts the string value entered into a integer
     Quantity = int(UserQuantity)
-    #If product is already in the cart, the cart updates with added quantity value, instead of adding new entry
+    #Converts the Quantity on hand into a integer
+    Qty_on_Hand = int(product['Qty on Hand'])
+    #If product is already in the cart, checks what the total quantity would be 
     if UserOrder in Cart:
-        Cart[UserOrder]['Qty'] += Quantity
+        #Calculate what to the new Total quantity would be
+        QuantityTotal = Cart[UserOrder]['Qty'] + Quantity
+       #if the quantity total is more than the quantity available than let user know what is available and what they can get 
+        if QuantityTotal > Qty_on_Hand:
+          print("Sorry, we only have" + str(Qty_on_Hand) + "of" + product['Description'] +  "available") 
+          print("You already have " + str(Cart[UserOrder]['Qty'] + "in your cart"))
+          print("You can only add" + str(Qty_on_Hand - Cart[UserOrder]['Qty']) + "to your cart") 
+        #Else, it adds on the product in cart instead of making a new entry
+        else:
+             Cart[UserOrder]['Qty'] += Quantity
+   #If quantity entered by user is more than the quantity available and exits out of the function
     else:
+        if Quantity > Qty_on_Hand:
+             print("Sorry, we only have" + str(Qty_on_Hand) + "of" + product['Description'] + "available")
+             return
+          
+        else:
         #Add a new product with product details
-        Cart[UserOrder] = {
-            'SKU' : product['SKU'],
-            'Price' : product['Price'],
-            'Description' : product['Description'],
-            'Qty' : Quantity
-        }
+            Cart[UserOrder] = {
+                'SKU' : product['SKU'],
+                'Price' : product['Price'],
+                'Description' : product['Description'],
+                'Qty' : Quantity
+          }
     
 
 def display_cart():
@@ -133,7 +150,7 @@ add_to_cart(UserOrder,UserQuantity)
 display_cart()
 
 #Prompts user again, to see if another product will be added
-x = input("Would you like to add another product (yes or no)?: ")
+x = input("Would you like to add another product? (yes or no)?: ")
 
 
 #If user inputted "yes", than while loop executes, until user inputs "no"
@@ -144,13 +161,24 @@ while x == "yes":
     UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
     add_to_cart(UserOrder,UserQuantity)
     display_cart()
-    x = input("Would you like to add another product (yes or no)?: ")
+    x = input("Would you like to add another product? (yes or no)?: ")
 
 #prompt user to see if ready for checkout
-checkout = input("Are you ready to checkout (yes or no): ")
-
+checkout = input("Are you ready to checkout? (yes or no): ")
+#Keeps asking user until their ready to checkout 
 while checkout == "no":
-     checkout = input("Are you ready to checkout (yes or no): ")
+    #Prompts user if they would like to add another product
+    anotherItem = input("Would you like to add another item? (yes or no): ")
+     #if yes lets user add another product 
+    while anotherItem == "yes":
+        UserOrder = input("Choose a product ID from the product catalog to continue:  ")
+        UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
+        add_to_cart(UserOrder,UserQuantity)
+        display_cart()
+        anotherItem = input("Would you like to add another item? (yes or no): ")
+    #Checks to see if user is ready to checkout
+    checkout = input("Are you ready to checkout? (yes or no): ")
+
 
 #if checkout equals yes then prompt for billing/shipping information
 if checkout == "yes":
