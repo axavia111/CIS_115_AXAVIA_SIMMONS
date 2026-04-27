@@ -75,6 +75,7 @@ def add_to_cart(UserOrder,UserQuantity):
         QuantityTotal = Cart[UserOrder]['Qty'] + Quantity
        #if the quantity total is more than the quantity available than let user know what is available and what they can get 
         if QuantityTotal > Qty_on_Hand:
+          print("--------------------------------------------------------------------------------------------------")
           print("Sorry, we only have "  + str(Qty_on_Hand) +   " of "   + product['Description'] +   " available. ") 
           print("--------------------------------------------------------------------------------------------------")
           print("You already have " + str(Cart[UserOrder]['Qty']) + " in your cart. ")
