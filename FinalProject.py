@@ -75,16 +75,18 @@ def add_to_cart(UserOrder,UserQuantity):
         QuantityTotal = Cart[UserOrder]['Qty'] + Quantity
        #if the quantity total is more than the quantity available than let user know what is available and what they can get 
         if QuantityTotal > Qty_on_Hand:
-          print("Sorry, we only have" + str(Qty_on_Hand) + "of" + product['Description'] +  "available") 
-          print("You already have " + str(Cart[UserOrder]['Qty'] + "in your cart"))
-          print("You can only add" + str(Qty_on_Hand - Cart[UserOrder]['Qty']) + "to your cart") 
+          print("Sorry, we only have "  + str(Qty_on_Hand) +   " of "   + product['Description'] +   " available. ") 
+          print("--------------------------------------------------------------------------------------------------")
+          print("You already have " + str(Cart[UserOrder]['Qty']) + " in your cart. ")
+          print("--------------------------------------------------------------------------------------------------")
+          print("You can only add " + str(Qty_on_Hand - Cart[UserOrder]['Qty']) + " to your cart. ") 
         #Else, it adds on the product in cart instead of making a new entry
         else:
              Cart[UserOrder]['Qty'] += Quantity
    #If quantity entered by user is more than the quantity available and exits out of the function
     else:
         if Quantity > Qty_on_Hand:
-             print("Sorry, we only have" + str(Qty_on_Hand) + "of" + product['Description'] + "available")
+             print("Sorry, we only have " + str(Qty_on_Hand) +  " of "  + product['Description'] + " available. ")
              return
           
         else:
