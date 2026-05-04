@@ -119,7 +119,7 @@ def display_cart():
             price = float(item['Price'][1:])
             #Multiplies price of an item by the quatity then adds to the total amount
             total = total + (price * item['Qty'])
-        print("----------------------------------------------")
+        print("------------------------------------------")
         #Converts total to a string
         print("Total: $" + str(total))
 
@@ -162,7 +162,7 @@ x = input("Would you like to add another product? (yes or no)?: ")
 #If user inputted "yes", than while loop executes, until user inputs "no"
 #Calls on funnction to add to the cart each time
 #Displays updated cart
-while x == "yes":
+while x.lower() == "yes":
     UserOrder = input("Choose a product ID from the product catalog to continue:  ")
     UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
     add_to_cart(UserOrder,UserQuantity)
@@ -172,11 +172,11 @@ while x == "yes":
 #prompt user to see if ready for checkout
 checkout = input("Are you ready to checkout? (yes or no): ")
 #Keeps asking user until their ready to checkout 
-while checkout == "no":
+while checkout.lower() == "no":
     #Prompts user if they would like to add another product
     anotherItem = input("Would you like to add another item? (yes or no): ")
      #if yes lets user add another product 
-    while anotherItem == "yes":
+    while anotherItem.lower() == "yes":
         UserOrder = input("Choose a product ID from the product catalog to continue:  ")
         UserQuantity = input(f'Enter quantity for product {UserOrder}: ')
         add_to_cart(UserOrder,UserQuantity)
@@ -187,7 +187,7 @@ while checkout == "no":
 
 
 #if checkout equals yes then prompt for billing/shipping information
-if checkout == "yes":
+if checkout.lower() == "yes":
     print("Please enter billing/shipping information")
     print("------------------------------------------")
     first_name = input("Enter Your First Name: ")
