@@ -71,7 +71,7 @@ def add_to_cart(UserOrder,UserQuantity):
     Qty_on_Hand = int(product['Qty on Hand'])
     #If product is already in the cart, checks what the total quantity would be 
     if UserOrder in Cart:
-        #Calculate what to the new Total quantity would be
+        #Calculates that to the new Total quantity would be
         QuantityTotal = Cart[UserOrder]['Qty'] + Quantity
        #if the quantity total is more than the quantity available than let user know what is available and what they can get 
         if QuantityTotal > Qty_on_Hand:
